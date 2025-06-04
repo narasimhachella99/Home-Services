@@ -1,0 +1,77 @@
+<div th:insert="navigation/userNav.html"></div>
+
+<div class="container">
+    <div class="grid grid-rows-1">
+
+        <div class="grid grid-cols-1">
+            <h2 class="display-3 text-teal-500">Book Order</h2>
+        </div>
+        <div class="w-full max-w-lg">
+            <div
+                    class="alert alert-danger"
+                    th:if="${error}"
+                    th:text="${error}"
+            ></div>
+            <div
+                    class="alert alert-success"
+                    th:if="${success}"
+                    th:text="${success}"
+            ></div>
+            <form action="/bookOrder1" method="get" class="bg-teal-500 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <h3>Choose type of Work</h3>
+                        <select class="form-select appearance-none
+      block
+      w-full
+      px-3
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+      bg-white bg-clip-padding bg-no-repeat
+      border border-solid border-gray-300
+      rounded
+      transition
+      ease-in-out
+      m-0
+      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" name="workType">
+                            <option th:each="worker : ${workers}" th:text="${worker.workType}" th:value="${worker.workType}"></option>
+                        </select>
+                    </div>
+                </div>
+
+<!--                <div class="flex justify-center">-->
+<!--                    <div class="mb-3 xl:w-96">-->
+<!--                        <h3>Choose Worker</h3>-->
+<!--                        <select class="form-select appearance-none-->
+<!--      block-->
+<!--      w-full-->
+<!--      px-3-->
+<!--      py-1.5-->
+<!--      text-base-->
+<!--      font-normal-->
+<!--      text-gray-700-->
+<!--      bg-white bg-clip-padding bg-no-repeat-->
+<!--      border border-solid border-gray-300-->
+<!--      rounded-->
+<!--      transition-->
+<!--      ease-in-out-->
+<!--      m-0-->
+<!--      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" name="workerName">-->
+
+<!--                                <option th:each="worker : ${workers}" th:text="${worker.name}" th:value="${worker.name}"></option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"  value="submit" type="submit">
+                        Submit
+                    </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>

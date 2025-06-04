@@ -1,0 +1,28 @@
+<head>
+  <div th:insert="navigation/adminNav.html"></div>
+</head>
+<center>
+  <div class="mt-5">
+    <table class="table table-striped table-hover w-50 table-borderless
+     bg-teal-500 bg-clip-padding bg-no-repeat
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+">
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+      </tr>
+      <tr th:each="worker : ${workers}">
+        <td th:text="${worker.id}"></td>
+        <td th:text="${worker.name}"></td>
+        <td th:text="${worker.email}"></td>
+        <td th:text="${worker.phoneNumber}"></td>
+      </tr>
+      </tr>
+    </table>
+  </div>
+</center>

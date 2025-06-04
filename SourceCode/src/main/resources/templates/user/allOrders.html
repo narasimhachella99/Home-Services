@@ -1,0 +1,46 @@
+<head>
+    <div th:insert="navigation/userNav.html"></div>
+</head>
+<center>
+    <div class="mt-5">
+        <div
+                class="alert alert-danger"
+                th:if="${error}"
+                th:text="${error}"
+        ></div>
+        <div
+                class="alert alert-success"
+                th:if="${success}"
+                th:text="${success}"
+        ></div>
+        <table class="table table-striped table-hover w-50 table-borderless
+     bg-teal-500 bg-clip-padding bg-no-repeat
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+">
+            <tr>
+                <th>S.No</th>
+                <th>UserName</th>
+                <th>UserNumber</th>
+                <th>WorkName</th>
+                <th>WorkerType</th>
+                <th>Status</th>
+
+            </tr>
+            <form action="/workerApprove" method="post">
+                <tr th:each="order : ${orders}">
+                    <td th:text="${order.id}"></td>
+                    <td th:text="${order.userName}"></td>
+                    <td th:text="${order.userNumber}"></td>
+                    <td th:text="${order.workerName}"></td>
+                    <td th:text="${order.workType}"></td>
+                    <td th:text="${order.status}"></td>
+
+            </form>
+            </tr>
+            </tr>
+        </table>
+    </div>
+</center>

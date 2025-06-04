@@ -1,0 +1,31 @@
+<div th:insert="navigation/userNav.html"></div>
+<div class="container">
+
+  <center>
+    <div class="mt-5">
+      <table class="table table-striped table-hover w-50 table-borderless
+      bg-white bg-clip-padding bg-no-repeat
+      py-1.5
+      text-base
+      font-normal
+      text-gray-700
+">
+        <tr>
+          <th>S.No</th>
+          <th> Worker Name</th>
+          <th> WorkerType</th>
+          <th>User Email</th>
+          <th>User Address</th>
+        </tr>
+        <tr th:each="worker : ${workers}">
+          <td th:text="${worker.id}"></td>
+          <td th:text="${worker.name}"></td>
+          <td th:text="${worker.workType}"></td>
+          <td th:text="${worker.email}"></td>
+          <td th:text="${worker.address}"></td>
+        </tr>
+        </tr>
+      </table>
+    </div>
+  </center>
+</div>
